@@ -45,7 +45,7 @@ public class YahooWeatherService {
                 String YQL = String.format("select * from weather.forecast where woeid in (select woeid from geo.places(1) where text=\"%s\") and u='" + units + "'", strings[0]);
                 String endpoint = String.format("https://query.yahooapis.com/v1/public/yql?q=%s&format=json", Uri.encode(YQL));
 
-                return getDataFromWeb(endpoint).toString();
+                return getDataFromWeb(endpoint);
             }
 
             @Override
